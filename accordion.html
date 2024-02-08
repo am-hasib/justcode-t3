@@ -64,9 +64,58 @@
         font-size: 24px;
         font-weight: bold;
       }
+      .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Style the trigger button */
+        .dropdown-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Style the dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Style the dropdown links */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color on hover */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Display the dropdown content on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
   </head>
   <body>
+    <div class="dropdown">
+      <button class="dropdown-btn">Dropdown</button>
+      <div class="dropdown-content">
+          <a href="#">Option 1</a>
+          <a href="#">Option 2</a>
+          <a href="#">Option 3</a>
+      </div>
+  </div>
     <ul class="accordion">
       <li>
         <input type="radio" name="accordion" id="first" />
@@ -102,5 +151,6 @@
         </div>
       </li>
     </ul>
+    
   </body>
 </html>

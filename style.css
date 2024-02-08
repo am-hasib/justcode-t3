@@ -59,6 +59,47 @@ h6 {
   color: #02073e;
   font-weight: 400;
 }
+.menu li {
+  position: relative;
+  display: inline-block;
+}
+.dropdown::after {
+  content: ">";
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  transform: rotate(0deg);
+  transition: transform 0.2s;
+}
+
+.dropdown:hover::after {
+  transform: rotate(90deg);
+}
+.dropdown ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown:hover > ul {
+  display: block;
+}
+.dropdown ul li {
+  display: block;
+  text-align: left;
+  transition: all 0.2s;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.dropdown ul li:hover {
+  background: #ddd;
+}
 .cta {
   display: flex;
   gap: 46px;
@@ -601,7 +642,6 @@ h6 {
 .footer_subscriber .subscribe_input input {
   font-family: "DM sans";
   padding-left: 10px;
-
 }
 .footer_subscriber .subscribe_input button {
   font-size: 18px;
@@ -618,7 +658,7 @@ h6 {
   font-family: "DM sans";
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
   display: none;
 }
 .active_subscriber {
